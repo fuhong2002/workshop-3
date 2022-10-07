@@ -77,7 +77,7 @@ staff_long %>%
 
 ### Exercise 5
 
-*Remove this text and add your answer here.*
+We get more part time and less tenure tract and normal faculty whereas the rest stays similar over the years.
 
 ```{r lineplot-2}
 staff_long %>% 
