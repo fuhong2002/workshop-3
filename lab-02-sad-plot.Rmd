@@ -83,7 +83,8 @@ staff_long %>%
 staff_long %>% 
  
   ggplot(mapping = aes(x = Year, 
-             y =  percentage_of_faculty, colour = faculty_type, group = faculty_type)) +
+             y =  percentage_of_faculty, colour = faculty_type, 
+             group = faculty_type)) +
   geom_line()
 ```
 
