@@ -42,7 +42,7 @@ staff_long <- staff %>%
   pivot_longer(
     cols = -faculty_type, 
     names_to = "Year",
-    values_to = "% of faculty"
+    values_to = "percentage_of_faculty"
       )
 ```
 
@@ -65,10 +65,13 @@ Team member 3 should pull to download updates and begins here.
 
 ### Exercise 4
 
-*Remove this text and add your answer here.*
+there is no line on the plot and years are too close to each other.
 
 ```{r lineplot-1}
-# remove this comment and add your code here
+staff_long %>% 
+  ggplot(aes(x = Year, 
+             y =  percentage_of_faculty, colour = faculty_type)) +
+  geom_line()
 ```
 
 
@@ -77,7 +80,11 @@ Team member 3 should pull to download updates and begins here.
 *Remove this text and add your answer here.*
 
 ```{r lineplot-2}
-# remove this comment and add your code here
+staff_long %>% 
+ 
+  ggplot(mapping = aes(x = Year, 
+             y =  percentage_of_faculty, colour = faculty_type, group = faculty_type)) +
+  geom_line()
 ```
 
 
