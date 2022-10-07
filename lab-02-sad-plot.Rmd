@@ -9,6 +9,7 @@ output: html_document
 
 ```{r load-packages, message = FALSE}
 library(tidyverse) 
+library(scales)
 ```
 
 ```{r load-data, message = FALSE}
@@ -101,7 +102,17 @@ Next team member should pull to download updates and continue from here.
 *Remove this text and add your answer here.*
 
 ```{r lineplot-3}
-# remove this comment and add your code here
+staff_long %>% 
+ 
+  ggplot(mapping = aes(x = Year, 
+             y =  percentage_of_faculty, colour = faculty_type, 
+             group = faculty_type)) +
+  geom_line() + 
+  labs(title = "Faculty Composition Across The Years", 
+       x = "Years", 
+       y = "Percentage of Faculty") + 
+  scale_y_continuous(labels = label_percent(scale = 1))
+       
 ```
 
 
